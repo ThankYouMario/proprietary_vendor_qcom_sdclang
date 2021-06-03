@@ -1,3 +1,10 @@
+The following are the changes in the 12.1.1 release of the Snapdragon LLVM
+ARM C/C++ Toolchain over the 12.1 release.
+
+1. Runtime and C library support for armv8r targets (32 and 64-bit)
+2. Fix corner case for PIC relocation in aarch64
+3. Support large atomic structure as function parameter
+
 This is the release of Snapdragon LLVM ARM C/C++ compiler toolchain version
 12.1. This is a minor revision update for the 12.0 release that went out in
 November 2020. This is a cross toolchain built to run on x86 64-bit Ubuntu
