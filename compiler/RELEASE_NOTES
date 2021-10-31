@@ -1,3 +1,10 @@
+The following are the changes in the 12.1.2 release of the Snapdragon LLVM
+ARM C/C++ Toolchain over the 12.1.1 release.
+
+1. Fixed MUSL libc initialization for baremetal target to not depend on any OS environment info	
+2. Added support for large allocation sizes for MUSL Libc malloc for baremetal environment
+3. Support GNU_RELRO with PHDRS
+
 The following are the changes in the 12.1.1 release of the Snapdragon LLVM
 ARM C/C++ Toolchain over the 12.1 release.
 
@@ -51,4 +58,3 @@ Use and Distribution:
 The release in the above locations is strictly for internal distribution and should
 not be distributed outside of Qualcomm. External releases will be made 
 available in the proper distribution channels.
-
