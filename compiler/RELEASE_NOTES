@@ -1,0 +1,60 @@
+This is the release of Snapdragon LLVM ARM C/C++ compiler toolchain version
+14.0. This is a major revision update of the toolchain. Starting with 14.0,
+the Snapdragon LLVM toolchain will support two different host platforms
+
+1. A cross toolchain built to run on x86 64-bit Ubuntu Linux (versions 14.04
+and later) and Windows platform (Windows 7 64-bit and later). 
+2. A native ARM64 toolchain built to run on Ubuntu Linux for ARM64 systems
+
+The Snapdragon LLVM ARM Compiler will generate code for ARM and X86 targets and
+will not generate code for any of the other targets supported by the llvm.org
+compiler.
+
+The Snapdragon LLVM ARM 14.0 toolchain includes all changes in the
+llvm.org 13.0 release branch, and proprietary features and optimizations
+that are not available in the llvm.org 13.0 branch.
+
+The Snapdragon LLVM ARM Compiler uses the integrated assembler for assembling
+and includes a full featured proprietary linker (QC Linker) for linking.
+
+The following link contains all the new features in the llvm.org 13.0 release.
+https://releases.llvm.org/13.0.0/docs/ReleaseNotes.html
+
+The Snapdragon LLVM ARM 14.0 toolchain contains all the above features,
+including the following key features compared to the Snapdragon LLVM ARM 12.1
+toolchain.
+
+Following are the main features
+1. C code support for ARMv9 pointer authentication with type-based discriminator.
+2. Support for RT libs (C, C++, compiler-rt) for pointer authentication with
+   type-based discriminator.  
+3. Support for ARMv8-R (32 and 64 bits) baremetal sysroot and corresponding RT
+   libs.
+4. Support for ARMv7E-M baremetal sysroot.
+5. Pragma support to disable sanitizer checks for loops to improve vectorization.
+6. Improved auto-vectorization opportunities to capture more inner loops.
+7. Better SVE support:
+	a. Cost model to capture most optimal vector version between NEON and SVE.
+	b. Improved addressing mode of scalable vectors.
+	c. Vectorize more nested control flow patterns.
+
+
+For more details about these features, please refer to section 4.3.17 of the
+SDLLVM user guide or contact sdllvm.support.
+
+Documentation
+The SDLLVM 14.0 user guides are available from Agile here:
+
+Snapdragon LLVM ARM Compiler User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-96
+
+Snapdragon LLVM ARM Linker User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-102
+
+Snapdragon LLVM ARM Utilities User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-103
+
+Contacts & Bug Reporting
+sdllvm.support@qualcomm.com
+
+Use and Distribution:
+The release in the above locations is strictly for internal distribution and should
+not be distributed outside of Qualcomm. External releases will be made 
+available in the proper distribution channels.
