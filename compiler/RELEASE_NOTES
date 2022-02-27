@@ -1,3 +1,9 @@
+
+The following are the changes in the 14.0.1 release of the Snapdragon LLVM
+ARM C/C++ Toolchain over the 14.0.0 release:
+
+1. Support for PAC-RET/BTI with B-key
+
 This is the release of Snapdragon LLVM ARM C/C++ compiler toolchain version
 14.0. This is a major revision update of the toolchain. Starting with 14.0,
 the Snapdragon LLVM toolchain will support two different host platforms
