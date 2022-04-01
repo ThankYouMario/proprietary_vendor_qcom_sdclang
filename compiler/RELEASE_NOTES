@@ -1,3 +1,13 @@
+The following are the changes in the 14.0.3 release of the Snapdragon LLVM
+ARM C/C++ Toolchain over the 14.0.2 release:
+
+1.Fix corner case issue in Auto vectorization that causes compile time crash
+
+The following are the changes in the 14.0.2 release of the Snapdragon LLVM
+ARM C/C++ Toolchain over the 14.0.1 release:
+
+1. Add support for 32-bit stack protector global on AArch64
+2. New compiler-rt for PAC-RET/BTI with B-Key
 
 The following are the changes in the 14.0.1 release of the Snapdragon LLVM
 ARM C/C++ Toolchain over the 14.0.0 release:
@@ -49,18 +59,11 @@ For more details about these features, please refer to section 4.3.17 of the
 SDLLVM user guide or contact sdllvm.support.
 
 Documentation
-The SDLLVM 14.0 user guides are available from Agile here:
-
-Snapdragon LLVM ARM Compiler User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-96
-
-Snapdragon LLVM ARM Linker User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-102
-
-Snapdragon LLVM ARM Utilities User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-103
+The complete user guides for this Snapdragon LLVM ARM compiler and linker
+are available in the 'documents' directory at the root of the SDLLVM
+toolchain, which was downloaded and installed by the Qualcomm Package
+Manager (QPM).
 
 Contacts & Bug Reporting
-sdllvm.support@qualcomm.com
-
-Use and Distribution:
-The release in the above locations is strictly for internal distribution and should
-not be distributed outside of Qualcomm. External releases will be made 
-available in the proper distribution channels.
+Please post all questions about this release to
+http://developer.qualcomm.com/llvm-forum
