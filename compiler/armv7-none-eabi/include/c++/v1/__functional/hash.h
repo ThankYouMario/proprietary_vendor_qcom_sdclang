@@ -16,9 +16,9 @@
 #include <__utility/move.h>
 #include <__utility/pair.h>
 #include <__utility/swap.h>
+#include <cstddef>
 #include <cstdint>
 #include <cstring>
-#include <cstddef>
 #include <limits>
 #include <type_traits>
 
@@ -561,6 +561,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 
 #endif // _LIBCPP_HAS_NO_UNICODE_CHARS
 
+#ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 template <>
 struct _LIBCPP_TEMPLATE_VIS hash<wchar_t>
@@ -576,6 +577,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
     _LIBCPP_INLINE_VISIBILITY
     size_t operator()(wchar_t __v) const _NOEXCEPT {return static_cast<size_t>(__v);}
 };
+#endif // _LIBCPP_HAS_NO_WIDE_CHARACTERS
 
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 template <>
