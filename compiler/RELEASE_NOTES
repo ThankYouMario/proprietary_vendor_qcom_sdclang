@@ -1,3 +1,23 @@
+This is the release of Snapdragon LLVM ARM C/C++ compiler toolchain version 14.1.2. This is a minor revision update
+of the toolchain. 
+
+The following are the changes in the 14.1.2 release over the 
+14.1.1 release:
+
+1. Allow mixing for BTI/PACRET enabled and non-BTI/PACRET
+enabled objects during LTO
+2. Fix for build errors for Windows-on-Snapdragon host platform
+3. Fix bug in floating point to signed integer conversion with
+saturation
+4. QC linker fix to not warn (by default) mismatch of certain
+attributes during linking
+
+The following are the changes in the 14.1.1 release of the Snapdragon LLVM
+ARM C/C++ Toolchain over the 14.1 release:
+
+1. Do not warn about attribute mismatch between object files
+2. Fix "Numeric group ID too large" error for arm-elfcopy
+
 This is the release of Snapdragon LLVM ARM C/C++ compiler toolchain version
 14.1. This is a minor revision update of the toolchain. 
 
