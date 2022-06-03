@@ -1,6 +1,10 @@
+The following are the changes in the 12.1.4 release of the Snapdragon LLVM
+ARM C/C++ Toolchain over the 12.1.3 release.
+
+1. Exclude explicit instantiations of iostream objects in libc++
 
 The following are the changes in the 12.1.3 release of the Snapdragon LLVM
-ARM C/C++ Toolchain over the 12.1.3 release.
+ARM C/C++ Toolchain over the 12.1.2 release.
 
 1. Support for PAC-RET/BTI with B-key
 2. Support for armv7em target triple with baremetal options 
@@ -8,9 +12,9 @@ ARM C/C++ Toolchain over the 12.1.3 release.
 The following are the changes in the 12.1.2 release of the Snapdragon LLVM
 ARM C/C++ Toolchain over the 12.1.1 release.
 
-1. Fixed MUSL libc initialization for baremetal target to not depend on any OS environment info
+1. Fixed MUSL libc initialization for baremetal target to not depend on any OS environment info	
 2. Added support for large allocation sizes for MUSL Libc malloc for baremetal environment
-3. Support GNU_RELRO with PHDRS 
+3. Support GNU_RELRO with PHDRS
 
 The following are the changes in the 12.1.1 release of the Snapdragon LLVM
 ARM C/C++ Toolchain over the 12.1 release.
@@ -42,7 +46,7 @@ including the following key features compared to the Snapdragon LLVM ARM 12.0
 toolchain.
 
 Following are the main features
-1. ARMv9 C code pointer authentication support
+1. C code pointer authentication support for ARMv8.3
 2. Support for generating SVE loop predication
 3. Support for ARMv8.2 crypto extension intrinsics
 4. MUSL C library for use with pointer authentication
@@ -52,18 +56,13 @@ For more details about these features, please refer to section 4.3.17 of the
 SDLLVM user guide or contact sdllvm.support.
 
 Documentation
-The SDLLVM 12.0 user guides are available from Agile here:
-
-Snapdragon LLVM ARM Compiler User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-96
-
-Snapdragon LLVM ARM Linker User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-102
-
-Snapdragon LLVM ARM Utilities User Guide: http://agiledocument.qualcomm.com/AgileDocument/spring/authorize?itemno=80-VB419-103
+The complete user guides for this Snapdragon LLVM ARM compiler and linker
+are available in the 'documents' directory at the root of the SDLLVM
+toolchain, which was downloaded and installed by the Qualcomm Package
+Manager (QPM).
 
 Contacts & Bug Reporting
-sdllvm.support@qualcomm.com
+Please post all questions about this release to
+http://developer.qualcomm.com/llvm-forum
 
-Use and Distribution:
-The release in the above locations is strictly for internal distribution and should
-not be distributed outside of Qualcomm. External releases will be made 
-available in the proper distribution channels.
+
