@@ -89,10 +89,10 @@ ln -sf llvm-rc llvm-windres
 rm wasm-ld
 ln -sf lld wasm-ld
 cd ../lib
-rm libLTO.so.14
-ln -sf libLTO.so libLTO.so.14
-rm libLW.so.14
-ln -sf libLW.so libLW.so.14
+rm libLTO.so.$(MAJOR_VERSION)
+ln -sf libLTO.so libLTO.so.$(MAJOR_VERSION)
+rm libLW.so.$(MAJOR_VERSION)
+ln -sf libLW.so libLW.so.$(MAJOR_VERSION)
 rm libc++abi.so.1
 ln -sf libc++abi.so libc++abi.so.1
 rm libc++abi.so.1.0
