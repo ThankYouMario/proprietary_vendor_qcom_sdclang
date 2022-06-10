@@ -41,68 +41,100 @@ rm list
 # Make LLD binaries executable:
 chmod a+x compiler/bin/ld*
 
-# Capture major version number for symlinks to clang-$(MAJOR_VERSION)
+# Capture major version number for symlinks to clang-$MAJOR_VERSION
 MAJOR_VERSION=$(ls compiler/lib/clang | cut -d. -f1)
 
 # Symlink identical files instead of duplicating
 cd compiler/bin
-rm aarch64-link
-ln -sf ld.qcld aarch64-link
-rm arm-link
-ln -sf ld.qcld arm-link
-rm clang
-ln -sf clang-$(MAJOR_VERSION) clang
-rm clang++
-ln -sf clang clang++
-rm clang-cl
-ln -sf clang-$(MAJOR_VERSION) clang-cl
-rm clang-cpp
-ln -sf clang-$(MAJOR_VERSION) clang-cpp
-rm ld.lld
-ln -sf lld ld.lld
-rm ld64.lld
-ln -sf lld ld64.lld
-rm lld-link
-ln -sf lld lld-link
-rm llvm-addr2line
-ln -sf llvm-symbolizer llvm-addr2line
-rm llvm-bitcode-strip
-ln -sf llvm-objcopy llvm-bitcode-strip
-rm llvm-dlltool
-ln -sf llvm-ar llvm-dlltool
-rm llvm-install-name-tool
-ln -sf llvm-objcopy llvm-install-name-tool
-rm llvm-lib
-ln -sf llvm-ar llvm-lib
-rm llvm-ranlib
-ln -sf llvm-ar llvm-ranlib
-rm llvm-otool
-ln -sf llvm-objdump llvm-otool
-rm llvm-readelf
-ln -sf llvm-readobj llvm-readelf
-rm llvm-strip
-ln -sf llvm-objcopy llvm-strip
-rm llvm-symbolizer
-ln -sf llvm-addr2line llvm-symbolizer
-rm llvm-windres
-ln -sf llvm-rc llvm-windres
-rm wasm-ld
-ln -sf lld wasm-ld
+if test -f "aarch64-link"; then
+    ln -sf ld.qcld aarch64-link
+fi
+if test -f "arm-link"; then
+    ln -sf ld.qcld arm-link
+fi
+if test -f "clang"; then
+    ln -sf clang-$MAJOR_VERSION clang
+fi
+if test -f "clang++"; then
+    ln -sf clang clang++
+fi
+if test -f "clang-cl"; then
+    ln -sf clang-$MAJOR_VERSION clang-cl
+fi
+if test -f "clang-cpp"; then
+    ln -sf clang-$MAJOR_VERSION clang-cpp
+fi
+if test -f "ld.lld"; then
+    ln -sf lld ld.lld
+fi
+if test -f "ld64.lld"; then
+    ln -sf lld ld64.lld
+fi
+if test -f "lld-link"; then
+    ln -sf lld lld-link
+fi
+if test -f "llvm-addr2line"; then
+    ln -sf llvm-symbolizer llvm-addr2line
+fi
+if test -f "llvm-bitcode-strip"; then
+    ln -sf llvm-objcopy llvm-bitcode-strip
+fi
+if test -f "llvm-dlltool"; then
+    ln -sf llvm-ar llvm-dlltool
+fi
+if test -f "llvm-install-name-tool"; then
+    ln -sf llvm-objcopy llvm-install-name-tool
+fi
+if test -f "llvm-lib"; then
+    ln -sf llvm-ar llvm-lib
+fi
+if test -f "llvm-ranlib"; then
+    ln -sf llvm-ar llvm-ranlib
+fi
+if test -f "llvm-otool"; then
+    ln -sf llvm-objdump llvm-otool
+fi
+if test -f "llvm-readelf"; then
+    ln -sf llvm-readobj llvm-readelf
+fi
+if test -f "llvm-strip"; then
+    ln -sf llvm-objcopy llvm-strip
+fi
+if test -f "llvm-windres"; then
+    ln -sf llvm-rc llvm-windres
+fi
+if test -f "wasm-ld"; then
+    ln -sf lld wasm-ld
+fi
+if test -f "x86-link"; then
+    ln -sf ld.qcld x86-link
+fi
+
 cd ../lib
-rm libLTO.so.$(MAJOR_VERSION)
-ln -sf libLTO.so libLTO.so.$(MAJOR_VERSION)
-rm libLW.so.14
-ln -sf libLW.so libLW.so.$(MAJOR_VERSION)
-rm libc++abi.so.1
-ln -sf libc++abi.so libc++abi.so.1
-rm libc++abi.so.1.0
-ln -sf libc++abi.so libc++abi.so.1.0
-rm libc++.so.1.0
-ln -sf libc++.so.1 libc++.so.1.0
-rm libprotobuf-lite.so.3.10.1.0
-ln -sf libprotobuf-lite.so libprotobuf-lite.so.3.10.1.0
-rm libprotoc.so.3.10.1.0
-ln -sf libprotoc.so libprotoc.so.3.10.1.0
+if test -f "libLTO.so.$MAJOR_VERSION"; then
+    ln -sf libLTO.so libLTO.so.$MAJOR_VERSION
+fi
+if test -f "libLW.so.$MAJOR_VERSION"; then
+    ln -sf libLW.so libLW.so.$MAJOR_VERSION
+fi
+if test -f "libc++abi.so.1"; then
+    ln -sf libc++abi.so libc++abi.so.1
+fi
+if test -f "libc++abi.so.1.0"; then
+    ln -sf libc++abi.so libc++abi.so.1.0
+fi
+if test -f "libc++.so.1.0"; then
+    ln -sf libc++.so.1 libc++.so.1.0
+fi
+if test -f "libprotobuf-lite.so*"; then
+    PROTOBUF_LITE_VERSIONED=$(ls lib/libprotobuf-lite.so.* | cut -d. -f-6)
+    ln -sf libprotobuf-lite.so $PROTOBUF_LITE_VERSIONED
+fi
+if test -f "libprotoc.so*"; then
+    PROTOC_VERSIONED=$(ls lib/libprotoc.so.* | cut -d. -f-6)
+    ln -sf libprotoc.so $PROTOC_VERSIONED
+fi
+
 cd ../..
 
 # Capture existing name and email, then change to Qualcomm defaults
