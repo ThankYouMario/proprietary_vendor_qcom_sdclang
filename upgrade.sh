@@ -127,11 +127,11 @@ if test -f "libc++.so.1.0"; then
     ln -sf libc++.so.1 libc++.so.1.0
 fi
 if test -f "libprotobuf-lite.so*"; then
-    PROTOBUF_LITE_VERSIONED=$(ls lib/libprotobuf-lite.so.* | cut -d. -f-6)
+    PROTOBUF_LITE_VERSIONED=$(ls libprotobuf-lite.so.* | cut -d. -f -6)
     ln -sf libprotobuf-lite.so $PROTOBUF_LITE_VERSIONED
 fi
 if test -f "libprotoc.so*"; then
-    PROTOC_VERSIONED=$(ls lib/libprotoc.so.* | cut -d. -f-6)
+    PROTOC_VERSIONED=$(ls libprotoc.so.* | cut -d. -f -6)
     ln -sf libprotoc.so $PROTOC_VERSIONED
 fi
 
