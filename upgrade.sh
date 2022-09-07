@@ -137,19 +137,9 @@ fi
 
 cd ../..
 
-# Capture existing name and email, then change to Qualcomm defaults
-GITNAME=$(git config user.name)
-GITEMAIL=$(git config user.email)
-git config user.name "QC Publisher"
-git config user.email "qcpublisher@qti.qualcomm.com"
-
 # Capture version number for automatic committing
 VERSION=$(ls compiler/lib/clang)
 
 # Commit new version
 git add compiler
 git commit -m "Import stripped Snapdragon LLVM ARM Compiler $VERSION" -m "See upgrade.sh for more information on what changed"
-
-# Switch back to user's name and email
-git config user.name $GITNAME
-git config user.email $GITEMAIL
